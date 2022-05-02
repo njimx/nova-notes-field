@@ -22,7 +22,7 @@
   "license": "MIT",
   "require": {
     "php": "^8.0",
-    "optimistdigital/nova-translations-loader": "^5.0"
+    "optimistdigital/nova-translations-loader": "^4.0"
   },
   "require-dev": {
     "laravel/nova": "^4.0"
