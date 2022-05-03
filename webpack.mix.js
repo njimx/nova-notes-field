@@ -1,18 +1,20 @@
-let mix = require("laravel-mix");
-let path = require("path");
+let mix = require('laravel-mix');
+let path = require('path');
 
 mix
-  .setPublicPath("dist")
+  .setPublicPath('dist')
   .js('resources/js/field.js', 'js')
   .vue({ version: 3 })
   .webpackConfig({
     externals: {
-      vue: "Vue",
+      vue: 'Vue',
     },
     output: {
-      uniqueName: "njimx/nova-notes-field",
+      uniqueName: 'njimx/nova-notes-field',
     },
   })
   .alias({
-    "laravel-nova": path.join(__dirname, "vendor/laravel/nova/resources/js/mixins/packages.js"),
+    'laravel-nova': path.join(__dirname, 'vendor/laravel/nova/resources/js/mixins/packages.js'),
+    '@/util': path.join(__dirname, 'vendor/laravel/nova/resources/js/util'),
+    InteractsWithDates$: path.join(__dirname, 'vendor/laravel/nova/resources/js/mixins/InteractsWithDates.js'),
   });
