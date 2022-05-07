@@ -1,5 +1,5 @@
 <template>
-  <div class="mb-4 flex" :class="fullWidth ? 'w-full' : 'w-3/5'">
+  <div class="mb-4 flex">
     <div v-if="trixEnabled">
       <trix-editor
         ref="trixEditor"
@@ -16,7 +16,7 @@
       v-else
       rows="3"
       :placeholder="placeholder"
-      class="form-control w-full form-input form-input-bordered py-3 h-auto"
+      class="form-control w-full form-input form-input-bordered py-3 h-auto md:w-3/5"
       v-bind:value="value"
       v-on:input="$emit('input', $event.target.value)"
       v-on:keydown.enter="onEnter"

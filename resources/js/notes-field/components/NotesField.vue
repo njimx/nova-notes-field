@@ -76,7 +76,7 @@ export default {
       return this.maxToShow && this.notes.length > this.maxToShow;
     },
     classes() {
-      const defaultClasses = 'notes-field bg-20 px-4 pt-4 pb-2 rounded-b-lg overflow-hidden border-b border-40';
+      const defaultClasses = 'notes-field bg-20 px-4 py-4 overflow-hidden border-b border-40';
       return defaultClasses + (this.extraClass ? ` ${this.extraClass}` : '');
     },
   },
