@@ -2,6 +2,7 @@
 
 namespace OptimistDigital\NovaNotesField;
 
+use Laravel\Nova\Http\Middleware\Authenticate;
 use Laravel\Nova\Nova;
 use Laravel\Nova\Events\ServingNova;
 use Illuminate\Support\Facades\Route;
@@ -45,7 +46,7 @@ class NotesFieldServiceProvider extends ServiceProvider
     {
         if ($this->app->routesAreCached()) return;
 
-        Route::middleware(['nova'])
+        Route::middleware(['nova', Authenticate::class])
             ->prefix('nova-vendor/nova-notes')
             ->namespace('\OptimistDigital\NovaNotesField\Http\Controllers')
             ->group(__DIR__ . '/../routes/api.php');
